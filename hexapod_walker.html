@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="gen_images/favicon.png" type="image/png">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Arnav Srikanth</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="project_images/hexapod_render.png" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Hexapod Walker</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Creo Parametric</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">MATLAB</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Robot Dynamics</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+                This hexapod walker was designed for my ME370 final project. The goal was to create a walker that would be able 
+                to move down a hallway and dispense candies at a set interval. Sadly, the design was not able to be constructed 
+                because of lack of access to facilities due to the COVID-19 pandemic.
+            </p>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Challenge</h3>
+            <p>
+                We had to develop a system powered by only a singular motor rotating at a constant speed that would both be able
+                to walk down a dorm hallway at a required speed and dispense candies into dorm room doors at a set interval. This
+                required us to design a drivetrain that would also be able to deliver power to the candy launching mechanism.
+            </p>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Leg Linkage Design</h3>
+            <p>
+                Each leg is a 4-bar linkage where link lengths were calculated to achieve a 0.5 duty cycle and a 0.1 m/s robot 
+                travel speed.
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/hexapod_leg.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Linkage Calculations and Analysis</h3>
+            <p>
+                PVA (position, velocity, acceleration) analysis using a MATLAB script to plot the theoretical motion of the 
+                mechanism and calculate velocity. In addition, calculations were done based on the total weight of the walker 
+                to make sure that we were generating the required torque to propel it forward.
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/hexapod_dutycycle.png" class="w-full">
+            </div>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/hexapod_footvelocity.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Drivetrain Design</h3>
+            <p>
+                The entire robot is powered by a single 12V DC motor reduced by a planetary gearbox and a belt to the main 
+                driveshaft (part of the design constraints). A belt drive system distributes power to each individual leg. 
+                Belts were chosen as the alternative to gears or chain to keep costs and weight low. A bevel gear and pulley 
+                system transfers power to the spring-loaded snack delivery mechanism.
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/hexapod_overhead.png" class="w-full">
+            </div>
+<!-- 
+            <ul class="list-disc pl-5 space-y-2 mb-6">
+                <li><strong>High-level Planner:</strong> Determines the foot placement and body trajectory.</li>
+                <li><strong>Low-level Controller:</strong> Calculates joint torques using inverse dynamics.</li>
+            </ul>
+            <p>
+                The result was a robust simulation where the robot could recover from external pushes and navigate slopes up to 15 degrees.
+            </p> -->
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>

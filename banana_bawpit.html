@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="gen_images/favicon.png" type="image/png">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Arnav Srikanth</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="project_images/bawpit_controller.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Banana Bawp It</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Embedded C</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Circuit Design</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">SolidWorks</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Laser Cutting</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">3D Printing</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+                The goal of this project was to develop an arcade game applying different mechatronics concepts such as circuit design, microcontrollers,
+                and embedded C. We chose to create a jungle themed game called <i>Banana Bawp-It!</i> (no relation Hasbro's Bop It!) that would allow the 
+                user to interact with the controller in different ways and race against the clock to complete the most amount of tasks in a 30 second span.
+                 An additional challenge we undertook was making the game accessible to those with visual impairments. This served as the 
+                final project for our class 16-878 Advanced Mechatronics Design in the Robotics Institute at Carnegie Mellon University. 
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/bawpit_overview.png" class="w-full">
+            </div>
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Mechatronic System Design</h3>
+            <p>
+                My main individual undertaking was the entire electronic design of the system. The major components that included were: unidirectional and 
+                bidirectional motor drivers, LED light array, and potentiometer circuit. The main challenge in this circuit design is that most systems had 
+                to be created from only basic components, barring a few ICs allowed such as op amps, comparators, and H-bridges.
+            </p>
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">LED Array</h3>
+            <p>
+                One key feature is visual feedback for the potentiometer output. My solution was an LED array that would light 16 LEDs in a circular shape as the potentiometer value increased. This is accomplished by employing two shift registers, each controlling eight LEDs. As the potentiometer turns, the output voltage value swings between 3.3V and 0V and that indicates to the microcontroller how many lights to turn on. If the potentiometer turns in the wrong direction, LEDs begin to turn off to indicate reversal of progress. When turning on each individual LED, the shift register gets a bit passed to pin 2, DSB, and the clock pin to trigger a bit shift. In order to turn LEDs off when the user turns the potentiometer backwards (to 0V), the MCU rapidly resets the shift register and shifts in the desired amount of bits. This happens so quickly it is indistinguishable to the human eye.
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/bawpit_ledarray.png" class="w-full">
+            </div>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/bawpit_ledarray_demo.gif" class="w-full">
+            </div>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Unidirectional Motor Driver</h3>
+            <p>
+                This motor driver was used to control our vibration motors in the handheld controller to give users non-visual feedback that a task had successfully been completed. This motor controller is built around an L293B quadruple high-current half-H driver. The open loop controller is designed in such a way that we can turn on and off both motors using a single input from the microcontroller at pin 9, chip enable 2, on the L293B. Although the microcontroller is capable of supplying the required 3.3V to power the motors, I elected to use a Pololu 2595 4-channel logic level shifter board to step down the voltage from 5V to 3.3V to avoid potentially damaging the microcontroller by directly pulling current from it. This level shifter was also used to supply 3.3V to other components in the system. 
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/bawpit_unimotor.png" class="w-full">
+            </div>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Bidirectional Motor Driver</h3>
+            <p>
+                The closed loop motor controller is slightly more complex. Using two inputs from the motor controller instead of one, we are able to achieve bidirectional control over our Pololu 4860 12V DC motor. Bidirectional control is key because we are employing a PID controller to ensure that the hourglass remains vertical during gameplay to achieve accurate timing.
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/bawpit_bimotor.png" class="w-full">
+            </div>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Potentiometer Circuit</h3>
+            <p>
+                The potentiometer is used to detect an analog signal from the angle one of the handles is twisted. The system is set up in the configuration of a voltage divider with the potentiometer on the ground side along with an LM324 op amp to make the signal go high when max resistance is reached. Since we were only allowed either 5V or 12V input, this setup also keeps the output voltage between the 3.3V maximum input voltage of the microcontroller. This is also demonstrated in the gif above in conjunction with the LED array circuit.
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/bawpit_potentiometer.png" class="w-full">
+            </div>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>

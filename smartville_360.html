@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="gen_images/favicon.png" type="image/png">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Arnav Srikanth</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="project_images/s360_closed.png" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Smartville 360</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">SolidWorks</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Sheet Metal Mfg</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Cable Harness Design</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Design for Manufacturing</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+                This was a stationary battery electric storage system designed as the flagship project of Smartville. It repurposed end of life Tesla Model 3 EV batteries as stationary storage to support commercial and utility applications. 
+            </p>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Why repurpose used EV batteries?</h3>
+            <p>
+                We all grew up learning about reduce, reuse, recycle. And as you know, it's important to make sure to reuse things
+                before we recycle. This also applies to EV batteries. As anyone who owns an electric vehicle can tell you, EV batteries
+                are not cheap. Largely due to the fact that they are full of rare earth metals. And due to the lack of recycling capacity
+                in the US, many EV batteries are shipped outside the US for recycling. Effectively surrendering these valuable metals. Our plan 
+                at Smartville was to repurpose these used batteries (which can have up to 75% capacity still left at end of life!) into stationary
+                storage. This would save tons of money on shipping and recycling costs as well as keep rare earth metals within the US. In addition,
+                it would bolster electrical storage capacity at industrial sites during outages as well as allow them to store excess solar power 
+                generated throughout the day for use during high cost hours in the evenings.
+            </p>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Mechanical Hardware Contributions</h3>
+            <p>
+                I designed sheet metal manufactured enclosures for our electrical and controls subsystems such as 
+                Battery Interface Box (ensured equal voltage between battery pairs), HVJB, and system controller. Each subsystem's 
+                enclosure was designed to fit in a standard server rack that we had installed in the Smartville 360 for ease of 
+                access as well as maintenance.
+            </p>
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/s360_open.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Cable Harness Design Contributions</h3>
+            <p>
+                I designed and sourced components for all high low voltage cable harnesses on the system. 
+                I also created documentation for manufacturing of cable harnesses. In addition, I manufactured prototype 
+                harnesses and tested them for fit, durability, and electrical safety.
+
+            </p>
+            <!-- <ul class="list-disc pl-5 space-y-2 mb-6">
+                <li><strong>High-level Planner:</strong> Determines the foot placement and body trajectory.</li>
+                <li><strong>Low-level Controller:</strong> Calculates joint torques using inverse dynamics.</li>
+            </ul>
+            <p>
+                The result was a robust simulation where the robot could recover from external pushes and navigate slopes up to 15 degrees.
+            </p> -->
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="gen_images/favicon.png" type="image/png">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Arnav Srikanth</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="project_images/frc_2018_comp2.jpg" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">FIRST Robotics Competition 2018 Robot</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Creo Parametric</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Manual Milling</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">CNC Milling</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+                This three-stage telescoping elevator was designed for a robot competing in the 2018 FIRST Robotics Competition. 
+                The goal was to place a cube on an elevated platform with varying heights of up to 96 inches tall. The fast and 
+                robust elevator design resulted in our robot ranking 6th on Daly Field and reaching the semifinals of our division 
+                at the FRC World Championship as an alliance captain.
+            </p>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Power Up!</h3>
+            <p>
+                The challenge this year was to pick up milk crates and lift them up to a tall seesaw platform. For each
+                second the seesaw was tilted to your team's half of the field, you would score points.
+            </p>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Elevator Stage Design</h3>
+            <p>
+                The elevator was made up of three stages that were stacked inwards as opposed to forwards to minimize bending 
+                the moment when fully extended. The stages were made of slotted aluminum extrusion to allow conical wheels to 
+                remain stable even during rapid extension and retraction. Speed was key here because every second the seesaw was 
+                tilted towards the opposing teams side, the more points they got.
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/frc_2018_elevator_zoom.png" class="w-full">
+            </div>
+
+            <p>
+                The elevator extended to up to 100 inches tall and retracted to 48 inches to fit within height limit enforced
+                at the start of the match.
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/frc_2018_elevator.png" class="w-full">
+            </div>
+            <p>
+                The elevator extended to up to 100 inches tall and retracted to 48 inches to fit within height limit enforced
+                at the start of the match.
+            </p>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Other Design Choices</h3>
+            <p>
+                The elevator was driven by a lift system powered by two brushed DC motors with planetary gearboxes attached to 
+                provide the gear reduction to achieve the necessary torque.
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/frc_2018_elevator_motors.png" class="w-full">
+            </div>
+
+            <p>
+                The third stage included a hinge system to allow the claw to fold upwards to fit within the robot’s frame at 
+                the beginning of the match
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/frc_2018_elevator_hinge.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Our Robot in Action!</h3>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/frc_2018_comp1.jpg" class="w-full">
+            </div>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>

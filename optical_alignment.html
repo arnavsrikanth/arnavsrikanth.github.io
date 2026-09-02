@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="gen_images/favicon.png" type="image/png">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Arnav Srikanth</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="project_images/oas_render.png" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Optical Alignment System</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Fusion360</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Laser Cutting</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">CNC Milling</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Arduino</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+                This is an optical alignment system design in conjunction with Sandia National Laboratories for our senior capstone project. The goal is to create 
+                a system that fully expands from a compact state to observe space debris in orbit around the earth. We received an award for Exceptional Project 
+                Management and Execution from our project sponsor for our work.            
+            </p>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Calculations and Design Phase</h3>
+            <p>
+                We were prescribed a specific pair of identical lenses to use to focus on objects at a distance of 2 meters. We then used this information to 
+                calculate the focal length required. The lenses were then fixed using a threaded screw type system shown below.
+            </p>
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/oas_focal_length_calc.png" class="w-full">
+            </div>
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/oas_lens_mounting.png" class="w-full">
+            </div>
+
+            <p>
+                The dimensions of the baffle were calculated by factoring in the desired field of view, sun rejection angle, and earth rejection angle.
+            </p>
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/oas_baffle_calc.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">ANSYS Simulations</h3>
+            <p>
+                We performed structural simulations in ANSYS to ensure that the design could withstand the stresses of launch and operation in space. The 
+                baffle was simulated under a 10G load case to verify that deformation remained within acceptable limits.
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/oas_stress.png" class="w-full">
+            </div>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/oas_deformation.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Prototypes and Final Design</h3>
+
+            <p>
+                A 3D printed prototype was developed to test the feasibility of our design before committing to manufacturing out of aluminum.
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/oas_prototype.png" class="w-full">
+            </div>
+
+            You can see the final aluminum prototype in its retracted and extended states below. 
+            The telescopic extension is driven by two lead screws powered by servo motors and controlled via an Arduino Nano.
+            The final prototype was planned to be wrapped in beta cloth however that was found to not be available for consumer purchase.
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/oas_retracted.jpg" class="w-full">
+            </div>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/oas_expanded.jpg" class="w-full">
+            </div>
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Future Improvements</h3>
+            <ul class="list-disc pl-5 space-y-2 mb-6">
+                <li>
+                    More robust deployment method. Perhaps using extra supportive rails to reduce shaking as currently all the load rests on the lead screws.
+                </li>
+                <li>
+                    Adjustable focal length based on object distance detection. This was originally in the plan for our project but was deemed to not be a feasible
+                    accomplishment in the 3 month timespan we had to complete the project.
+                </li>
+            </ul>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>

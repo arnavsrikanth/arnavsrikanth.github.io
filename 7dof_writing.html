@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="gen_images/favicon.png" type="image/png">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Arnav Srikanth</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="project_images/16741_thumbnail.png" class="w-full h-full object-cover">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Human-like Handwriting Using a 7-DOF Robotic Manipulator</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Python</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">PyBullet</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">OpenCV</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Control Theory</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Robot Dynamics</span>
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+                The goal of this project was to develop an algorithm to recognize samples of human handwriting and replicate the pen 
+                strokes using a Franka Emika Panda 7-DOF Robot Arm simulated in PyBullet. This served as the final project for our 
+                class 16-741 Mechanics of Manipulation in the Robotics Institute at Carnegie Mellon University. 
+                An accompanying final paper was written that you can find <a href="documents/Human-like Handwriting Using a 7-DOF Manipulator.pdf"><u><b>here</b></u></a> 
+                that delves into further detail of our computer vision algorithm and model predictive control development. Source code 
+                containing all data, experiments, and analysis is made available at <a href="https://github.com/gabearod2/calligraphy"><u><b>here</b></u></a>.
+            </p>
+            <br>
+            <p> We created a computer vision-based trajectory generation approach
+                that models not only the pen stroke trajectory but also the
+                desired stroke thickness. To track the generated trajectories, a
+                PD force controller is used to modulate the pen stroke trajectory
+                for thickness tracking, and the modulated trajectory is tracked
+                by a model predictive controller using linearized task-space
+                kinematics. The resulting pipeline achieves a success rate of
+                82.35% on handwriting excerpts from our custom dataset, which
+                includes both print and cursive text with varying stroke thickness.
+            </p>
+            <div class="my-8">
+                <h3 class="text-xl font-semibold text-slate-800 mb-4">Project Walkthrough</h3>
+
+                <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-sm border border-slate-100">
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/uqsLYkpxTog" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <!--<div class="my-8">-->
+            <!--    <h3 class="text-xl font-semibold text-slate-800 mb-4">Writing Demonstration Video</h3>-->
+    
+            <!--    <div class="rounded-3xl overflow-hidden shadow-sm border border-slate-100 bg-slate-900">-->
+            <!--        <video class="w-full h-auto" controls autoplay loop muted playsinline>-->
+            <!--            <source src="project_images/16741_video.webm" type="video/webm">-->
+            <!--            Your browser does not support the video tag.-->
+            <!--        </video>-->
+            <!--    </div>-->
+            <!--    <p class="text-sm text-slate-500 mt-2 italic">Writing the letter "A" in "Arnav" at 10x speed</p>-->
+            <!--</div>-->
+            
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">Computer Vision Pipeline</h3>
+            <p>
+                To enable precise force modulation, a computer vision pipeline was developed to simultaneously extract the 
+                spatial trajectory <b><i>w</i></b> and the local stroke thickness <b><i>δ</i></b> from the input image
+            </p>
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="project_images/16741_cv_pipeline.png" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">CV Pipeline Evaluation</h3>
+            <p>
+                To validate the fidelity of the trajectory generation pipeline, a comparative analysis was conducted between 
+                the ground truth binarized image <i>A</i> and the reconstructed stroke geometry <i>B</i> on 17 different 
+                handwriting excerpts written on an iPad. Quantitatively, geometric congruence was measured using the 
+                Intersection over Union (IoU) metric, formally known as the Jaccard Index <i>J(A,B)</i>. Qualitatively, a 
+                difference map was generated to visualize discrepancies.
+            </p>
+            <figure class="my-8">
+    
+                <div class="rounded-3xl overflow-hidden shadow-sm border border-slate-100 mb-3">
+                    <img src="project_images/16741_error_map.png" alt="Error Map" class="w-full h-auto">
+                </div>
+                <figcaption class="text-center text-slate-500 text-sm italic px-4">
+                    Evaluation results of print text sample "Arnav"
+                </figcaption>
+            </figure>
+
+<!--             
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Challenge</h3>
+            <p>
+                Developing a stable locomotion controller is difficult due to the non-linear dynamics of legged robots. I utilized Gazebo for physics simulation and ROS2 for the communication architecture between the perception and control nodes.
+            </p>
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="https://placehold.co/800x400/e2e8f0/64748b?text=Simulation+Screenshot" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Solution</h3>
+            <p>
+                The control architecture was split into two levels:
+            </p>
+            <ul class="list-disc pl-5 space-y-2 mb-6">
+                <li><strong>High-level Planner:</strong> Determines the foot placement and body trajectory.</li>
+                <li><strong>Low-level Controller:</strong> Calculates joint torques using inverse dynamics.</li>
+            </ul>
+            <p>
+                The result was a robust simulation where the robot could recover from external pushes and navigate slopes up to 15 degrees.
+            </p> -->
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>
