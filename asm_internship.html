@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="icon" href="gen_images/favicon.png" type="image/png">
+    <style>body { font-family: 'Roboto', sans-serif; }</style>
+</head>
+<body class="bg-[#fdfcff] text-slate-800">
+
+    <nav class="sticky top-0 z-50 bg-[#fdfcff]/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tight text-indigo-900">Arnav Srikanth</a>
+            <div class="flex gap-8 text-sm font-medium text-slate-600">
+                <a href="index.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Home</a>
+                <a href="projects.html" class="text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">Projects</a>
+                <a href="resume.html" class="hover:text-indigo-600 transition-colors px-3 py-1">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-6 py-16">
+        <div class="w-full h-80 md:h-96 bg-slate-200 rounded-3xl overflow-hidden mb-10">
+            <img src="project_images/asm_logo.webp" class="w-full h-full p-4 object-contain">
+        </div>
+
+        <header class="mb-10">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">Cobot Assisted Semiconductor Tool Maintenance</h1>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Python</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Computer Vision</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Creo Parametric</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">Trajectory Planning</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">PyBullet</span>
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 rounded-full text-sm font-medium">RoboDK</span>
+
+
+            </div>
+        </header>
+
+        <div class="prose prose-slate prose-lg text-slate-600 leading-relaxed">
+            <p>
+               During my internship at ASM, I engineered an automated solution for semiconductor equipment maintenance to replace the 
+               manual servicing of a heavy 56 kg showerhead component, effectively cutting field service engineer requirements by 50%. 
+               I unfortunately cannot share the source code or images of the project due to intellectual property restrictions, but I 
+               can provide a detailed overview of the work I accomplished during my internship.
+               
+            </p>
+            <br>
+            <p>
+               Using PTC Creo, manual machining, and 3D printing, I designed and rapidly prototyped custom robotic end effectors and 
+               support hardware, achieving a precise ±3mm measured margin of error during component manipulation. To validate 
+               kinematics and safety, I built simulation environments in PyBullet and RoboDK to evaluate workspace constraints, run 
+               collision avoidance, and model trajectory planning using RRT-Connect algorithms for a JAKA Zu18 6 DoF collaborative 
+               robot. Additionally, I developed a computer vision pipeline and encoder-driven closed-loop control scheme in Python 
+               that integrated COGNEX industrial automation cameras, the JAKA Zu18, and a Kolver KDucer electric screwdriver over 
+               MODBUS TCP to fully automate fastener removal. 
+            </p>
+            
+            <!-- <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Challenge</h3>
+            <p>
+                Developing a stable locomotion controller is difficult due to the non-linear dynamics of legged robots. I utilized Gazebo for physics simulation and ROS2 for the communication architecture between the perception and control nodes.
+            </p>
+
+            <div class="my-8 rounded-2xl overflow-hidden shadow-sm">
+                <img src="https://placehold.co/800x400/e2e8f0/64748b?text=Simulation+Screenshot" class="w-full">
+            </div>
+
+            <h3 class="text-xl font-semibold text-slate-800 mt-8 mb-4">The Solution</h3>
+            <p>
+                The control architecture was split into two levels:
+            </p>
+            <ul class="list-disc pl-5 space-y-2 mb-6">
+                <li><strong>High-level Planner:</strong> Determines the foot placement and body trajectory.</li>
+                <li><strong>Low-level Controller:</strong> Calculates joint torques using inverse dynamics.</li>
+            </ul>
+            <p>
+                The result was a robust simulation where the robot could recover from external pushes and navigate slopes up to 15 degrees.
+            </p> -->
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-slate-100">
+            <a href="projects.html" class="text-indigo-600 font-medium hover:underline">&larr; Back to Projects</a>
+        </div>
+    </article>
+
+</body>
+</html>
