@@ -28,7 +28,7 @@
         <div class="flex justify-between items-center mb-12 bg-indigo-50 p-6 rounded-2xl">
             <div>
                 <h1 class="text-2xl font-medium text-slate-900">My Resume</h1>
-                <p class="text-slate-500 text-sm mt-1">Updated March 2026</p>
+                <p class="text-slate-500 text-sm mt-1">Updated September 2026</p>
             </div>
             <a href="documents/Arnav-Srikanth-Resume.pdf" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-colors shadow-sm flex items-center gap-2">
                 <i class="fas fa-download"></i> Download PDF
@@ -53,12 +53,15 @@
                 <div class="mb-6">
                     <div class="flex justify-between items-baseline">
                         <h3 class="text-xl font-bold text-slate-800">Master of Science in Mechanical Engineering</h3>
-                        <span class="text-slate-500 text-sm">May 2027</span>
+                        <span class="text-slate-500 text-sm">December 2026</span>
                     </div>
                     <p class="text-slate-700 font-medium">Carnegie Mellon University, Pittsburgh PA</p>
                     <p class="text-slate-600 mt-1">GPA: 4.0/4.0</p>
-                    <p class="text-slate-600 mt-1">MetaMobility Lab, NASA Lunabotics Challenge</p>
-                    <p class="text-slate-600 mt-1"><strong>Relevant Coursework:</strong> Mechanics of Manipulation, Advanced Mechatronic Design, Machine Learning and Artificial Intelligence for Engineers, Intro to Robot Learning, Bioinspired Robot Design and Experimentation</p>
+                    <p class="text-slate-600 mt-1">MetaMobility Lab</p>
+                    <p class="text-slate-600 mt-1"><strong>Relevant Coursework:</strong> Mechanics of Manipulation, 
+                        Advanced Mechatronic Design, Machine Learning and Artificial Intelligence for Engineers, 
+                        Intro to Robot Learning, Bioinspired Robot Design and Experimentation, Computer Vision, 
+                        Modern Control Theory, Soft Robots</p>
                 </div>
 
                 <div>
@@ -77,11 +80,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-slate-700">
                     <div>
                         <span class="font-bold block text-slate-900">Software & Code:</span>
-                        Python, C, MATLAB, PyTorch, Scikit-learn, Pandas, OpenCV
+                        Python, OpenCV, ROS2, C/C++, MATLAB, PyTorch, PyBullet, MuJoCo, SCONE/HyFyDy
                     </div>
                     <div>
                         <span class="font-bold block text-slate-900">CAD & Simulation:</span>
-                        SolidWorks, Creo Parametrics, Fusion360, FEA, PyBullet, MuJoCo
+                        SolidWorks, Creo Parametrics, Fusion360, FEA, KiCAD, EasyEDA
                     </div>
                     <div>
                         <span class="font-bold block text-slate-900">Manufacturing:</span>
@@ -92,16 +95,38 @@
 
             <section class="mb-10">
                 <h2 class="text-lg font-bold text-indigo-600 uppercase tracking-wider mb-4">Work Experience</h2>
+
+                <div class="mb-6">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-xl font-bold text-slate-800">Robotics Engineering Intern</h3>
+                        <span class="text-slate-500 text-sm">Jun 2026 - Aug 2026</span>
+                    </div>
+                    <p class="text-slate-700 font-medium mb-2">ASM, Phoenix AZ</p>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1">
+                        <li>Engineered automation solution for semiconductor equipment maintenance, replacing a manual showerhead 
+                            replacement process involving a 56 kg component and reducing field service engineer requirements by 50%</li>
+                        <li>Designed and rapidly prototyped robotic end effectors and support hardware using PTC Creo, machining, and
+                             3D printing to allow robot to manipulate components of semiconductor tools during preventative maintenance
+                              with a ±3mm measured margin of error</li>
+                        <li>Built and validated simulation environments in PyBullet and RoboDK to assess workspace constraints, 
+                            collision avoidance and trajectory planning using RRT-Connect algorithms for a JAKA Zu18 6 DoF collaborative 
+                            robot</li>
+                        <li>Developed computer vision pipeline and encoder-driven closed loop control scheme to integrate COGNEX 
+                            industrial automation cameras, JAKA Zu18, and Kolver KDucer electric screwdriver using Python to communicate 
+                            via MODBUS TCP to automate fastener removal</li>
+                        
+                    </ul>
+                </div>
                 
                 <div class="mb-6">
                     <div class="flex justify-between items-baseline">
                         <h3 class="text-xl font-bold text-slate-800">Graduate Research Assistant</h3>
-                        <span class="text-slate-500 text-sm">Aug 2025 - Present</span>
+                        <span class="text-slate-500 text-sm">Aug 2025 - Aug 2026</span>
                     </div>
                     <p class="text-slate-700 font-medium mb-2">MetaMobility Lab, Pittsburgh PA</p>
                     <ul class="list-disc list-inside text-slate-600 space-y-1">
-                        <li>Designed, fabricated, and tested lower body perturbation system to simulate trips and slips to enable varied data collection for hip and knee exoskeleton controller testing</li>
-                        <li>Overhauled hip exoskeleton mechatronics, reducing total system weight by 10% and eliminating external cabling, resulting in a 30% reduction in subject setup time</li>
+                        <li>Overhauled hip exoskeleton mechatronics and developed custom power delivery PCB, reducing total system 
+                            weight by 10% and eliminating external cabling, resulting in a 30% reduction in subject setup time</li>
                     </ul>
                 </div>
 
