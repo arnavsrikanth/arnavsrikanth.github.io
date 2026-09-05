@@ -1,0 +1,144 @@
+html {
+    color-scheme: light;
+}
+
+html.dark {
+    color-scheme: dark;
+}
+
+body,
+nav,
+.bg-white,
+.bg-slate-100,
+.bg-slate-200,
+.bg-indigo-50 {
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.theme-toggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #e2e8f0;
+    border-radius: 9999px;
+    background: #f8fafc;
+    color: #475569;
+    cursor: pointer;
+    transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.theme-toggle:hover {
+    background: #e0e7ff;
+    color: #4338ca;
+    transform: translateY(-1px);
+}
+
+.theme-toggle-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+html.dark body {
+    background-color: #111827 !important;
+    color: #e5e7eb !important;
+}
+
+html.dark nav {
+    background-color: rgba(17, 24, 39, 0.9) !important;
+    border-color: #374151 !important;
+}
+
+html.dark .bg-white {
+    background-color: #1f2937 !important;
+}
+
+html.dark .bg-slate-100 {
+    background-color: #374151 !important;
+}
+
+html.dark .bg-slate-200 {
+    background-color: #4b5563 !important;
+}
+
+html.dark .bg-indigo-50 {
+    background-color: #312e81 !important;
+}
+
+html.dark .text-slate-900,
+html.dark .text-slate-800 {
+    color: #f3f4f6 !important;
+}
+
+html.dark .text-slate-700 {
+    color: #d1d5db !important;
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-500 {
+    color: #9ca3af !important;
+}
+
+html.dark .text-indigo-900 {
+    color: #c7d2fe !important;
+}
+
+html.dark .text-indigo-600 {
+    color: #a5b4fc !important;
+}
+
+html.dark .border-slate-100 {
+    border-color: #374151 !important;
+}
+
+html.dark .border-white {
+    border-color: #4b5563 !important;
+}
+
+html.dark .hover\\:text-indigo-600:hover,
+html.dark .group:hover .group-hover\\:text-indigo-600 {
+    color: #c7d2fe !important;
+}
+
+html.dark .hover\\:bg-indigo-100:hover {
+    background-color: #3730a3 !important;
+}
+
+html.dark .theme-toggle {
+    border-color: #4b5563;
+    background: #1f2937;
+    color: #fde68a;
+}
+
+html.dark .theme-toggle:hover {
+    background: #374151;
+    color: #fef3c7;
+}
+
+html.dark .prose,
+html.dark .prose-slate {
+    color: #d1d5db !important;
+}
+
+html.dark .prose :where(strong):not(:where([class~="not-prose"] *)),
+html.dark .prose :where(h1, h2, h3, h4):not(:where([class~="not-prose"] *)) {
+    color: #f3f4f6 !important;
+}
+
+html.dark .prose :where(a):not(:where([class~="not-prose"] *)) {
+    color: #a5b4fc !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body,
+    nav,
+    .bg-white,
+    .bg-slate-100,
+    .bg-slate-200,
+    .bg-indigo-50,
+    .theme-toggle {
+        transition: none;
+    }
+}
